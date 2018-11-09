@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service for Sensor</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("html/header.html");
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapperForFooter">
+
+            <div id="header"></div>
+
+            <div class="content">
+                <form action="get-inputs" method="get">
+                    <input type="submit" value="Get inputs">
+                </form>
+            </div>
+
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
