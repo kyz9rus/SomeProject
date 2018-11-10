@@ -6,48 +6,48 @@ import javax.persistence.*;
 public class Input {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private double temperature, x, y;
+    private Long id;
+    private Double temperature, x, y;
 
     public Input() {
     }
 
-    public Input(Long id, double temperature, double x, double y) {
+    public Input(Long id, Double temperature, Double x, Double y) {
         this.id = id;
         this.temperature = temperature;
         this.x = x;
         this.y = y;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public double getTemperature() {
+    public Double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(double temperature) {
+    public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(Double y) {
         this.y = y;
     }
 

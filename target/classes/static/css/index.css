@@ -15,12 +15,21 @@
 }
 
 .name{
+    margin: 32px auto;
     text-align: center;
 }
 
-.loginBlock{
-
+.loginBlock button p{
+    font-size: 12px;
 }
+
+.userLoginBlock button, .sensorLoginBlock button{
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 4px auto;
+}
+
 
 .mainText{
     font-size: 23px;
@@ -28,10 +37,9 @@
 
 .content{
     flex: 1 0 auto;
-    height: 100%;
+    height: 500px;
     margin: 50px auto !important;
     padding: 10px;
-    /*border: 1px solid blue;*/
 }
 
 .footer{

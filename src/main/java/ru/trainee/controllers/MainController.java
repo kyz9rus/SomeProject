@@ -25,11 +25,13 @@ public class MainController{
         public String greetingSubmit(Model model) {
 
                 List<Input> inputs = (List<Input>) inputRepository.findAll();
-                inputs = inputs.stream().skip(inputs.size()-10).collect(Collectors.toList());
+                inputs = inputs
+                        .stream()
+                        .skip(inputs.size()-10)                                    // for mappings only last 10 inputs
+                        .collect(Collectors.toList());
 
                 model.addAttribute("inputs", inputs);
 
                 return "result";
         }
-
 }

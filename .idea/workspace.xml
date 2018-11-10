@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cdadbd4-b881-4bcb-8e6c-5ea8c0e294b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/trainee/Repository/InputRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/trainee/DAO/InputDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/trainee/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/trainee/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/html/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/html/loginBlock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/trainee/DAO/InputDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/trainee/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/trainee/controllers/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/trainee/model/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/trainee/model/Input.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/trainee/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/trainee/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/html/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/result.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -98,11 +94,11 @@
           <entry key="config" value="26" />
           <entry key="css" value="79" />
           <entry key="dummy" value="20" />
-          <entry key="html" value="1021" />
-          <entry key="java" value="2330" />
+          <entry key="html" value="1241" />
+          <entry key="java" value="2600" />
           <entry key="mustache" value="129" />
           <entry key="properties" value="95" />
-          <entry key="sql" value="1181" />
+          <entry key="sql" value="1182" />
           <entry key="txt" value="10" />
           <entry key="xml" value="89" />
         </counts>
@@ -110,12 +106,12 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="79" />
-          <entry key="HTML" value="1149" />
-          <entry key="JAVA" value="2330" />
+          <entry key="HTML" value="1369" />
+          <entry key="JAVA" value="2600" />
           <entry key="PLAIN_TEXT" value="56" />
           <entry key="Properties" value="95" />
           <entry key="SQL" value="5" />
-          <entry key="Scratch" value="1176" />
+          <entry key="Scratch" value="1177" />
           <entry key="ThymeleafExpressions" value="1" />
           <entry key="XML" value="89" />
         </counts>
@@ -123,10 +119,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="config" value="1" />
-          <entry key="css" value="5" />
+          <entry key="css" value="9" />
           <entry key="ftl" value="1" />
-          <entry key="html" value="12" />
-          <entry key="java" value="47" />
+          <entry key="html" value="16" />
+          <entry key="java" value="48" />
           <entry key="mustache" value="2" />
           <entry key="properties" value="8" />
           <entry key="sql" value="5" />
@@ -135,10 +131,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
+          <entry key="CSS" value="9" />
           <entry key="FTL" value="1" />
-          <entry key="HTML" value="14" />
-          <entry key="JAVA" value="47" />
+          <entry key="HTML" value="18" />
+          <entry key="JAVA" value="48" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="8" />
           <entry key="Scratch" value="5" />
@@ -149,44 +145,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="93" selection-start-line="27" selection-start-column="93" selection-end-line="27" selection-end-column="93" />
+            <state relative-caret-position="300">
+              <caret line="30" column="113" selection-start-line="30" selection-start-column="113" selection-end-line="30" selection-end-column="113" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/Repository/InputRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3a3aed0a-1943-4909-af5f-b4a2ad080a5d/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -211,6 +186,8 @@
       <find>ProfileDao</find>
       <find>int</find>
       <find>location</find>
+      <find>long</find>
+      <find>double</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -233,7 +210,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.mustache" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/result.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/html/header.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application.config" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/config/DatabaseConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/config/ConnectionSettings.java" />
@@ -247,13 +223,15 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/Dao/InputDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/Dao/InputRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/model/User.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3a3aed0a-1943-4909-af5f-b4a2ad080a5d/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/result.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/Repository/InputRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3a3aed0a-1943-4909-af5f-b4a2ad080a5d/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/result.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/html/loginBlock.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java" />
       </list>
     </option>
@@ -387,6 +365,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trainee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trainee" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -408,8 +395,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541850924503" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541854445286" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -471,12 +458,12 @@
       <updated>1541767440005</updated>
       <workItem from="1541767446555" duration="1772000" />
       <workItem from="1541769425297" duration="21132000" />
-      <workItem from="1541844043139" duration="4945000" />
+      <workItem from="1541844043139" duration="7516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27849000" />
+    <option name="totallyTimeSpent" value="30420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +488,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -512,7 +499,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="13" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32891566" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -549,13 +536,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/static/index.css" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.mustache" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/html/header.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/result.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/model/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -645,20 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/html/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -673,33 +639,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/result.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/result.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/html/loginBlock.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="55" column="106" selection-start-line="55" selection-start-column="106" selection-end-line="55" selection-end-column="106" />
+        <state relative-caret-position="30">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        <state relative-caret-position="362">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="93" selection-start-line="27" selection-start-column="93" selection-end-line="27" selection-end-column="93" />
+        <state relative-caret-position="337">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/model/Input.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,8 +690,25 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3a3aed0a-1943-4909-af5f-b4a2ad080a5d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        <state relative-caret-position="398">
+          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/trainee/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="113" selection-start-line="30" selection-start-column="113" selection-end-line="30" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
         </state>
       </provider>
     </entry>
