@@ -5,16 +5,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.trainee.DAO.InputDAO;
+import ru.trainee.Repository.InputRepository;
 import ru.trainee.model.Input;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class MainController{
-
         @Autowired
-        private InputDAO inputDAO;
+        private InputRepository inputRepository;
 
         @RequestMapping("/")
         public String hello() {
@@ -24,8 +24,10 @@ public class MainController{
         @RequestMapping(value="/get-inputs", method = RequestMethod.GET)
         public String greetingSubmit(Model model) {
 
-                List<Input> list = inputDAO.getInputs();
-                model.addAttribute("inputs", list);
+                List<Input> inputs = (List<Input>) inputRepository.findAll();
+                inputs = inputs.stream().skip(inputs.size()-10).collect(Collectors.toList());
+
+                model.addAttribute("inputs", inputs);
 
                 return "result";
         }

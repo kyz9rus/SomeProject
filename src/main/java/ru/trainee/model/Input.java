@@ -1,27 +1,58 @@
 package ru.trainee.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Input {
-    private Temperature temperature;
-    private Location location;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private double temperature, x, y;
 
-    public Input(Temperature temperature, Location location){
+    public Input() {
+    }
+
+    public Input(Long id, double temperature, double x, double y) {
+        this.id = id;
         this.temperature = temperature;
-        this.location = location;
+        this.x = x;
+        this.y = y;
     }
 
-    public String getTemperature() {
-        return temperature.toString();
+    public long getId() {
+        return id;
     }
 
-    public void setTemperature(Temperature temperature) {
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
-    public String getLocation() {
-        return location.toString();
+    public double getX() {
+        return x;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return id + " (" + String.format("%.2f", x) + "; " + String.format("%.2f", y) + ") " + temperature;
     }
 }

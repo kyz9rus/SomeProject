@@ -23,14 +23,16 @@
             <div class="content">
                 <table>
                     <tr>
-                        <td>temperature</td>
+                        <td>id</td>
                         <td>location</td>
+                        <td>temperature</td>
                     </tr>
 
                     {{#inputs}}
                     <tr>
+                        <td>{{id}}</td>
+                        <td>({{x}}; {{y}})</td>
                         <td>{{temperature}}</td>
-                        <td>{{location}}</td>
                     </tr>
                     {{/inputs}}
                 </table>
