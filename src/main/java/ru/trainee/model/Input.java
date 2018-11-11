@@ -12,13 +12,12 @@ import javax.persistence.Id;
 public class Input {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private double temperature, x, y;
 
     public Input(){}
 
-    public Input(Long id, double temperature, double x, double y){
-        this.id = id;
+    public Input(double temperature, double x, double y){
         this.temperature = temperature;
         this.x = x;
         this.y = y;
