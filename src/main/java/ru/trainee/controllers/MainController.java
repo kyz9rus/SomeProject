@@ -8,16 +8,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.trainee.model.*;
+import ru.trainee.model.Input;
 import ru.trainee.repository.InputRepository;
 import ru.trainee.templatesForValidation.InputValid;
-//import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+//import ru.trainee.templatesForValidation.InputValid;
 
 @Controller
 public class MainController{
