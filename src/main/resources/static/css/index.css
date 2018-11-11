@@ -19,17 +19,17 @@
     text-align: center;
 }
 
-.loginBlock button p{
-    font-size: 12px;
+.loginBlock img{
+    width: 100%;
 }
 
-.userLoginBlock button, .sensorLoginBlock button{
-    width: 100px;
+.loginBlock button{
+    background: black;
+    width: 120px;
     height: 40px;
     border-radius: 8px;
-    margin: 4px auto;
+    margin: 28px auto;
 }
-
 
 .mainText{
     font-size: 23px;
@@ -40,6 +40,11 @@
     height: 500px;
     margin: 50px auto !important;
     padding: 10px;
+}
+
+.textBack{
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .footer{

@@ -1,0 +1,16 @@
+.nameLabel{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    border-radius: 8px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}
