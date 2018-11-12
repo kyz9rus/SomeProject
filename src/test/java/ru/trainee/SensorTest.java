@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@WithUserDetails("SENSOR")
+@WithUserDetails("sensor")
 public class SensorTest {
 
     @Autowired
@@ -27,7 +27,7 @@ public class SensorTest {
     @Autowired
     MainController mainController;
 
-    /*@Test
+    @Test
     public void sensorPageTest() throws Exception{
         this.mockMvc.perform(get("/sensorPage"))
                 .andDo(print())
@@ -36,8 +36,15 @@ public class SensorTest {
 
     @Test
     public void notUserPageTest() throws Exception{
-        this.mockMvc.perform(get("/sensorPage"))
+        this.mockMvc.perform(get("/userPage"))
                 .andDo(print())
                 .andExpect(status().isForbidden());
-    }*/
+    }
+
+    @Test
+    public void getInputsTest() throws Exception{
+        this.mockMvc.perform(get("/get-inputs"))
+                .andDo(print())
+                .andExpect(status().isForbidden());
+    }
 }

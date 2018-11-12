@@ -9,6 +9,8 @@ import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import ru.trainee.controllers.MainController;
+import ru.trainee.repository.UserRepository;
+import ru.trainee.service.CustomUserDetailService;
 
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -18,26 +20,30 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@WithUserDetails("USER")
+@WithUserDetails("user")
 public class UserTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    MainController mainController;
+    @Test
+    public void userPageTest() throws Exception{
+        this.mockMvc.perform(get("/userPage"))
+                .andDo(print())
+                .andExpect(authenticated());
+    }
 
-//    @Test
-//    public void sensorPageTest() throws Exception{
-//        this.mockMvc.perform(get("/userPage"))
-//                .andDo(print())
-//                .andExpect(authenticated());
-//    }
-//
-//    @Test
-//    public void notUserPageTest() throws Exception{
-//        this.mockMvc.perform(get("/sensorPage"))
-//                .andDo(print())
-//                .andExpect(status().isForbidden());
-//    }
+    @Test
+    public void sensorPageTest() throws Exception{
+        this.mockMvc.perform(get("/sensorPage"))
+                .andDo(print())
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    public void getInputsTest() throws Exception{
+        this.mockMvc.perform(get("/get-inputs"))
+                .andDo(print())
+                .andExpect(authenticated());
+    }
 }

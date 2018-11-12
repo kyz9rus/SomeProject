@@ -25,31 +25,3 @@ $$;
 alter function input_inserter(integer)
   owner to postgres;
 
-
--- Script for inserting values to sensor table
-create function sensor_inserter(integer)
-  returns void
-language plpgsql
-as $$
-DECLARE
-  N ALIAS for $1;
-  length integer;
-  i INTEGER DEFAULT 1;
-  count integer default 0;
-  chars text[] = '{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}' ;
-  model text;
-BEGIN
-  for i in 1..N loop
-    length = random() * 10;
-
-      while count < length or model=null loop
-        model = concat(chars[1+random()*(array_length(chars, 1)-1)], model);
-        count = count+1;
-      end loop;
-
-    insert into sensor values(DEFAULT, initcap(model));
-    model = NULL;
-    count = 0;
-  end loop;
-END
-$$;
