@@ -16,6 +16,20 @@ table tr:first-child{
     border: none !important;
 }
 
-table tr:nth-child(even){
+.table-data:nth-child(odd){
     background: #AFEEEE;
+}
+
+table td{
+    width: 3%;
+}
+
+.input input{
+    text-align: center;
+    width: 70%;
+    border-radius: 8px;
+}
+
+.table-filters{
+    background: grey;
 }

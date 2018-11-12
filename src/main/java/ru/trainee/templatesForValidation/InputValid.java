@@ -1,10 +1,14 @@
 package ru.trainee.templatesForValidation;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 public class InputValid {
     private Long id;
     @Pattern(regexp = "^[0-9]*[.,][0-9]+$", message = "Invalid number format for temperature")
+    @Min(value = 10, message = "Temperature must be in range of 10 to 30")
+    @Max(value = 30, message = "Temperature must be in range of 10 to 30")
     private String temperature;
     @Pattern(regexp = "^[0-9]*[.,][0-9]+$", message = "Invalid number format for coordinate x")
     private String x;

@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
+<html lang="en">
 <head>
     <title>Result</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="css/result.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/result.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
@@ -33,31 +34,41 @@
             </div>
 
             <div class="content">
-                <table>
+                <table id="filter-table">
                     <tr>
                         <td>id</td>
                         <td>location</td>
                         <td>temperature</td>
+                        <td>place</td>
+                    </tr>
+                    <tr class="table-filters">
+                        <td colspan="3"></td>
+                        <td class="input">
+                            <input type="text"/>
+                        </td>
                     </tr>
 
                     {{#inputs}}
-                    <tr>
+                    <tr class='table-data'>
                         <td>{{id}}</td>
                         <td>({{x}}; {{y}})</td>
-                        <td>{{temperature}}</td>
+                        <td class="temperature">{{temperature}}</td>
+                        <td class="city">{{city}}</td>
                     </tr>
                     {{/inputs}}
                 </table>
+
+                <script src="js/filter.js"></script>
+
             </div>
 
             <a class="textBack" href="/">Back</a>
 
             <div class="footer">
-                &copy; 2018
+                <!--&copy; 2018-->
             </div>
         </div>
     </div>
-
 
 </body>
 </html>

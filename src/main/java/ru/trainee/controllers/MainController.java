@@ -9,14 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.trainee.maps.GeoLocaiton;
 import ru.trainee.model.Input;
+import ru.trainee.model.InputView;
 import ru.trainee.repository.InputRepository;
 import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,15 +46,24 @@ public class MainController{
         public String getInputs(Model model) {
             setGreeting(model);
 
-                List<Input> inputs = inputRepository.findAll();
-                inputs = inputs
-                        .stream()
-                        .skip(inputs.size()-10)                                    // for mappings only last 10 input2s
-                        .collect(Collectors.toList());
+            List<Input> inputs = inputRepository.findAll();
+            List<InputView> inputViews = new ArrayList<>();
 
-                model.addAttribute("inputs", inputs);
+            inputs
+                    .stream()
+                    .skip(inputs.size()-10)                                    // for mappings only last 10 input2s
+                    .forEach(input -> {
+                        inputViews.add(new InputView (input.getId(), input.getTemperature(), input.getX(), input.getY()));
+                    });
 
-                return "result";
+            inputViews.forEach(inputView -> {
+                try {
+                    inputView.setCity(new GeoLocaiton().getCity(inputView.getX(), inputView.getY()));
+                } catch (Exception e) {}
+            });
+
+            model.addAttribute("inputs", inputViews);
+            return "result";
         }
 
         @PreAuthorize("hasAnyRole('SENSOR')")
