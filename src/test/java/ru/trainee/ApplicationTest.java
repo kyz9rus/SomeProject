@@ -9,7 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import ru.trainee.controllers.MainController;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -38,9 +37,9 @@ public class ApplicationTest {
 
     @Test
     public void accessDenied() throws Exception{
-        this.mockMvc.perform(get("/get-inputs"))
+        this.mockMvc.perform(get("/userPage"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("http://localhost:8080/login"));
+                .andExpect(redirectedUrl("http://localhost/login"));
     }
 }

@@ -3,6 +3,8 @@ package ru.trainee.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,21 +21,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//import ru.trainee.templatesForValidation.InputValid;
-
 @Controller
 public class MainController{
         @Autowired
         private InputRepository inputRepository;
 
+        public static void setGreeting(Model model){
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            if (!authentication.getName().equals("anonymousUser"))
+                model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
+        }
+
         @RequestMapping("/")
-        public String hello() {
-                return "index";
+        public String hello(Model model) {
+            setGreeting(model);
+            return "index";
         }
 
         @PreAuthorize("hasAnyRole('USER')")
         @RequestMapping(value="/get-inputs", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
         public String getInputs(Model model) {
+            setGreeting(model);
 
                 List<Input> inputs = inputRepository.findAll();
                 inputs = inputs
@@ -49,6 +58,7 @@ public class MainController{
         @PreAuthorize("hasAnyRole('SENSOR')")
         @RequestMapping(value="/saveInput", method = RequestMethod.POST)
         public String saveInput(@Valid InputValid inputValid, BindingResult bindingResult, Model model) {
+            setGreeting(model);
             if (bindingResult.hasErrors()) {
                 List<String> messages = new ArrayList<>();
 

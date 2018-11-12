@@ -27,7 +27,10 @@
                     <p class="mainText">Welcome to the sensor page!</p>
                 </div>
 
-                <div id="loginBlock" class="loginBlock col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="loginBlock col-md-2 col-sm-2 col-xs-2">
+                    <div id="loginBlock"></div>
+                    <p class="greeting">{{#greeting}} {{.}} {{/greeting}}</p>
+                </div>
             </div>
         </div>
 

@@ -28,7 +28,11 @@
     width: 120px;
     height: 40px;
     border-radius: 8px;
-    margin: 28px auto;
+    margin: 12px auto;
+}
+
+.loginBlock p{
+    font-size: 20px;
 }
 
 .mainText{

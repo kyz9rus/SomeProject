@@ -26,7 +26,10 @@
                     <p class="mainText">Welcome to the user page!</p>
                 </div>
 
-                <div id="loginBlock" class="loginBlock col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="loginBlock col-md-2 col-sm-2 col-xs-2">
+                    <div id="loginBlock"></div>
+                    <p class="greeting">{{#greeting}} {{.}} {{/greeting}}</p>
+                </div>
             </div>
         </div>
 
@@ -35,6 +38,8 @@
                 <input type="submit" value="Get inputs">
             </form>
         </div>
+
+        <a class="textBack" href="/">Back</a>
 
         <div class="footer">
             &copy; 2018
