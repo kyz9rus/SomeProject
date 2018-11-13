@@ -18,17 +18,15 @@ import ru.trainee.repository.InputRepository;
 import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class MainController{
         @Autowired
         private InputRepository inputRepository;
 
-        public static void setGreeting(Model model){
+        static void setGreeting(Model model){
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
             if (!authentication.getName().equals("anonymousUser"))
@@ -59,7 +57,7 @@ public class MainController{
             inputViews.forEach(inputView -> {
                 try {
                     inputView.setCity(new GeoLocaiton().getCity(inputView.getX(), inputView.getY()));
-                } catch (Exception e) {}
+                } catch (Exception ignored) {}
             });
 
             model.addAttribute("inputs", inputViews);

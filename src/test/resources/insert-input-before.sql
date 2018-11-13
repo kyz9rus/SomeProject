@@ -1,0 +1,1 @@
+insert into input(temperature, x, y) values (10.23, 12.42, 64.25);

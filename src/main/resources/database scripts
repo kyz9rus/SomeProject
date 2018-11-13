@@ -1,5 +1,5 @@
 -- Script for inserting values to input table
-create function input_inserter(integer)
+create or replace function input_inserter(integer)
   returns void
 language plpgsql
 as $$
@@ -12,7 +12,11 @@ DECLARE
 BEGIN
   for i in 1..N loop
 
-    v_temperature = round( ((random() * 1000) / 50)::numeric, 2);
+    v_temperature = 1.0;
+    while v_temperature < 10 OR v_temperature > 30 loop
+      v_temperature = round( ((random() * 1000) / 25)::numeric, 2);
+    end loop;
+
     v_x = round( ((random() * 1000) / 100)::numeric, 2);
     v_y = round( ((random() * 1000) / 100)::numeric, 2);
 
@@ -21,7 +25,3 @@ BEGIN
   end loop;
 END
 $$;
-
-alter function input_inserter(integer)
-  owner to postgres;
-
