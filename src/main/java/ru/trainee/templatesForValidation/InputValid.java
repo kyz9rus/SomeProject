@@ -4,6 +4,10 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
+/**
+ * This class was created for validation inputs. It is neccesary,
+ * because @Pattern doesn't support double data type.
+ */
 public class InputValid {
     private Long id;
     @Pattern(regexp = "^[0-9]*[.,][0-9]+$", message = "Invalid number format for temperature")

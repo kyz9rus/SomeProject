@@ -2,6 +2,10 @@ package ru.trainee.model;
 
 import lombok.Data;
 
+/**
+ * This class was created to display inputs on user page.
+ * Here is a new field city.
+ */
 @Data
 public class InputView {
     private long id;
