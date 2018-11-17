@@ -18,6 +18,7 @@ import ru.trainee.repository.InputRepository;
 import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +27,16 @@ public class MainController{
         @Autowired
         private InputRepository inputRepository;
 
-        static void setGreeting(Model model){
+    static void setGreeting(Model model){
+        try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
             if (!authentication.getName().equals("anonymousUser"))
                 model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
         }
+        catch(NullPointerException e){
+            System.out.println("There is no authentication user yet.");
+        }
+    }
 
         @RequestMapping("/")
         public String hello(Model model) {

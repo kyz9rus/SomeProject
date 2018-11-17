@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.trainee.repository.UserRepository;
 import ru.trainee.service.CustomUserDetailService;
@@ -39,17 +40,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private PasswordEncoder getPasswordEncoder() {
-        return new PasswordEncoder() {
-            @Override
-            public String encode(CharSequence charSequence) {
-                return charSequence.toString();
-            }
-
-            @Override
-            public boolean matches(CharSequence charSequence, String s) {
-                return s.contentEquals(charSequence);
-            }
-        };
+        return new BCryptPasswordEncoder();
     }
-
 }

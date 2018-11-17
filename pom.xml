@@ -44,6 +44,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Dev Tools-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-devtools</artifactId>-->
+        <!--</dependency>-->
+
         <!--Template system-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
