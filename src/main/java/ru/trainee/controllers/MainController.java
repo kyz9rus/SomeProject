@@ -15,6 +15,7 @@ import ru.trainee.maps.GeoLocaiton;
 import ru.trainee.model.Input;
 import ru.trainee.model.InputView;
 import ru.trainee.repository.InputRepository;
+import ru.trainee.service.InputService;
 import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
@@ -25,18 +26,18 @@ import java.util.List;
 @Controller
 public class MainController{
         @Autowired
-        private InputRepository inputRepository;
+        private InputService inputService;
 
-    static void setGreeting(Model model){
-        try {
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (!authentication.getName().equals("anonymousUser"))
-                model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
+        static void setGreeting(Model model){
+            try {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                if (!authentication.getName().equals("anonymousUser"))
+                    model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
+            }
+            catch(NullPointerException e){
+                System.out.println("There is no authentication user yet.");
+            }
         }
-        catch(NullPointerException e){
-            System.out.println("There is no authentication user yet.");
-        }
-    }
 
         @RequestMapping("/")
         public String hello(Model model) {
@@ -49,7 +50,8 @@ public class MainController{
         public String getInputs(Model model) {
             setGreeting(model);
 
-            List<Input> inputs = inputRepository.findAll();
+
+            List<Input> inputs = inputService.getAllInputs();
             List<InputView> inputViews = new ArrayList<>();
 
             inputs
@@ -73,6 +75,7 @@ public class MainController{
         @RequestMapping(value="/saveInput", method = RequestMethod.POST)
         public String saveInput(@Valid InputValid inputValid, BindingResult bindingResult, Model model) {
             setGreeting(model);
+
             if (bindingResult.hasErrors()) {
                 List<String> messages = new ArrayList<>();
 
@@ -86,7 +89,7 @@ public class MainController{
 
             Input input = new Input(inputValid.getDoubleTemperature(), inputValid.getDoubleX(), inputValid.getDoubleY());
 
-            inputRepository.save(input);
+            inputService.saveInput(input);
 
             model.addAttribute("successMessage", "Data successfully saved");
 
