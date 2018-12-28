@@ -12,9 +12,7 @@ import ru.trainee.controllers.MainController;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -36,7 +34,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void accessDenied() throws Exception{
+    public void accessDenied() throws Exception {
         this.mockMvc.perform(get("/userPage"))
                 .andDo(print())
                 .andExpect(status().is3xxRedirection())

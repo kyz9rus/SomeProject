@@ -12,11 +12,11 @@ public class InputService {
     @Autowired
     InputRepository inputRepository;
 
-    public void saveInput(Input input){
+    public void saveInput(Input input) {
         inputRepository.save(input);
     }
 
-    public List<Input> getAllInputs(){
+    public List<Input> getAllInputs() {
         return inputRepository.findAll();
     }
 }

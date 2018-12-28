@@ -28,21 +28,21 @@ public class SensorTest {
     MainController mainController;
 
     @Test
-    public void sensorPageTest() throws Exception{
+    public void sensorPageTest() throws Exception {
         this.mockMvc.perform(get("/sensorPage"))
                 .andDo(print())
                 .andExpect(authenticated());
     }
 
     @Test
-    public void notUserPageTest() throws Exception{
+    public void notUserPageTest() throws Exception {
         this.mockMvc.perform(get("/userPage"))
                 .andDo(print())
                 .andExpect(status().isForbidden());
     }
 
     @Test
-    public void getInputsTest() throws Exception{
+    public void getInputsTest() throws Exception {
         this.mockMvc.perform(get("/get-inputs"))
                 .andDo(print())
                 .andExpect(status().isForbidden());

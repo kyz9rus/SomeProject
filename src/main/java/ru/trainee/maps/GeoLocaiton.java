@@ -2,7 +2,6 @@ package ru.trainee.maps;
 
 import com.google.common.collect.Maps;
 import com.oracle.javafx.jmx.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Map;
 
@@ -15,7 +14,7 @@ public class GeoLocaiton {
         final Map<String, String> params = Maps.newHashMap();
 
         params.put("sensor", "false");
-        params.put("latlng", String.format("%.6f", x).replace(',','.') + "," + String.format("%.6f", y).replace(',','.'));
+        params.put("latlng", String.format("%.6f", x).replace(',', '.') + "," + String.format("%.6f", y).replace(',', '.'));
         params.put("language", "en");
         params.put("key", Property.getApi_key());
 

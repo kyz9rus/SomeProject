@@ -15,16 +15,17 @@ public class Input {
     private long id;
     private double temperature, x, y;
 
-    public Input(){}
+    public Input() {
+    }
 
-    public Input(long id, double temperature, double x, double y){
+    public Input(long id, double temperature, double x, double y) {
         this.id = id;
         this.temperature = temperature;
         this.x = x;
         this.y = y;
     }
 
-    public Input(double temperature, double x, double y){
+    public Input(double temperature, double x, double y) {
         this.temperature = temperature;
         this.x = x;
         this.y = y;

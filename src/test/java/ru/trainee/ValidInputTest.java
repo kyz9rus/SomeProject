@@ -24,7 +24,7 @@ public class ValidInputTest {
     private MockMvc mockMvc;
 
     @Test
-    public void invalidNumberTest() throws Exception{
+    public void invalidNumberTest() throws Exception {
         this.mockMvc.perform(post("/saveInput")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                 .param("x", "text"))
@@ -33,7 +33,7 @@ public class ValidInputTest {
     }
 
     @Test
-    public void inRangeTest() throws Exception{
+    public void inRangeTest() throws Exception {
         this.mockMvc.perform(post("/saveInput")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                 .param("temperature", "40.5"))
@@ -42,7 +42,7 @@ public class ValidInputTest {
     }
 
     @Test
-    public void successSaveTest() throws Exception{
+    public void successSaveTest() throws Exception {
         this.mockMvc.perform(post("/saveInput")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                 .param("x", "40.5")

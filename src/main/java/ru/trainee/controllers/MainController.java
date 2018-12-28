@@ -14,85 +14,83 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ru.trainee.maps.GeoLocaiton;
 import ru.trainee.model.Input;
 import ru.trainee.model.InputView;
-import ru.trainee.repository.InputRepository;
 import ru.trainee.service.InputService;
 import ru.trainee.templatesForValidation.InputValid;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class MainController{
-        @Autowired
-        private InputService inputService;
+public class MainController {
+    @Autowired
+    private InputService inputService;
 
-        static void setGreeting(Model model){
+    static void setGreeting(Model model) {
+        try {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            if (!authentication.getName().equals("anonymousUser"))
+                model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
+        } catch (NullPointerException e) {
+            System.out.println("There is no authentication user yet.");
+        }
+    }
+
+    @RequestMapping("/")
+    public String hello(Model model) {
+        setGreeting(model);
+        return "index";
+    }
+
+    @PreAuthorize("hasAnyRole('USER')")
+    @RequestMapping(value = "/get-inputs", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getInputs(Model model) {
+        setGreeting(model);
+
+
+        List<Input> inputs = inputService.getAllInputs();
+        List<InputView> inputViews = new ArrayList<>();
+
+        inputs
+                .stream()
+                .skip(inputs.size() - 10)                                    // for mappings only last 10 input2s
+                .forEach(input -> {
+                    inputViews.add(new InputView(input.getId(), input.getTemperature(), input.getX(), input.getY()));
+                });
+
+        inputViews.forEach(inputView -> {
             try {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                if (!authentication.getName().equals("anonymousUser"))
-                    model.addAttribute("greeting", "Hello, " + authentication.getName() + "!");
+                inputView.setCity(new GeoLocaiton().getCity(inputView.getX(), inputView.getY()));
+            } catch (Exception ignored) {
             }
-            catch(NullPointerException e){
-                System.out.println("There is no authentication user yet.");
-            }
-        }
+        });
 
-        @RequestMapping("/")
-        public String hello(Model model) {
-            setGreeting(model);
-            return "index";
-        }
+        model.addAttribute("inputs", inputViews);
+        return "result";
+    }
 
-        @PreAuthorize("hasAnyRole('USER')")
-        @RequestMapping(value="/get-inputs", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-        public String getInputs(Model model) {
-            setGreeting(model);
+    @PreAuthorize("hasAnyRole('SENSOR')")
+    @RequestMapping(value = "/saveInput", method = RequestMethod.POST)
+    public String saveInput(@Valid InputValid inputValid, BindingResult bindingResult, Model model) {
+        setGreeting(model);
 
+        if (bindingResult.hasErrors()) {
+            List<String> messages = new ArrayList<>();
 
-            List<Input> inputs = inputService.getAllInputs();
-            List<InputView> inputViews = new ArrayList<>();
+            for (ObjectError error : bindingResult.getAllErrors())
+                messages.add(error.getDefaultMessage());
 
-            inputs
-                    .stream()
-                    .skip(inputs.size()-10)                                    // for mappings only last 10 input2s
-                    .forEach(input -> {
-                        inputViews.add(new InputView (input.getId(), input.getTemperature(), input.getX(), input.getY()));
-                    });
-
-            inputViews.forEach(inputView -> {
-                try {
-                    inputView.setCity(new GeoLocaiton().getCity(inputView.getX(), inputView.getY()));
-                } catch (Exception ignored) {}
-            });
-
-            model.addAttribute("inputs", inputViews);
-            return "result";
-        }
-
-        @PreAuthorize("hasAnyRole('SENSOR')")
-        @RequestMapping(value="/saveInput", method = RequestMethod.POST)
-        public String saveInput(@Valid InputValid inputValid, BindingResult bindingResult, Model model) {
-            setGreeting(model);
-
-            if (bindingResult.hasErrors()) {
-                List<String> messages = new ArrayList<>();
-
-                for (ObjectError error : bindingResult.getAllErrors() )
-                    messages.add(error.getDefaultMessage());
-
-                model.addAttribute("errorMessages", messages);
-
-                return "sensorPage";
-            }
-
-            Input input = new Input(inputValid.getDoubleTemperature(), inputValid.getDoubleX(), inputValid.getDoubleY());
-
-            inputService.saveInput(input);
-
-            model.addAttribute("successMessage", "Data successfully saved");
+            model.addAttribute("errorMessages", messages);
 
             return "sensorPage";
         }
+
+        Input input = new Input(inputValid.getDoubleTemperature(), inputValid.getDoubleX(), inputValid.getDoubleY());
+
+        inputService.saveInput(input);
+
+        model.addAttribute("successMessage", "Data successfully saved");
+
+        return "sensorPage";
+    }
 }

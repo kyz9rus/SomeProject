@@ -51,15 +51,15 @@ public class InputValid {
         return y;
     }
 
-    public Double getDoubleTemperature(){
+    public Double getDoubleTemperature() {
         return Double.parseDouble(temperature.replace(',', '.'));
     }
 
-    public Double getDoubleX(){
+    public Double getDoubleX() {
         return Double.parseDouble(x.replace(',', '.'));
     }
 
-    public Double getDoubleY(){
+    public Double getDoubleY() {
         return Double.parseDouble(y.replace(',', '.'));
     }
 }

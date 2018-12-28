@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class CustomUserDetails extends User implements UserDetails {
 
-    public CustomUserDetails(final User user){
+    public CustomUserDetails(final User user) {
         super(user);
     }
 
@@ -29,7 +29,7 @@ public class CustomUserDetails extends User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return super.getName() ;
+        return super.getName();
     }
 
     @Override

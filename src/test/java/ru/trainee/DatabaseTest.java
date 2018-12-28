@@ -31,7 +31,7 @@ public class DatabaseTest {
     private MockMvc mockMvc;
 
     @Test
-    public void checkSavingInput() throws Exception{
+    public void checkSavingInput() throws Exception {
         int initialSize = inputRepository.findAll().size();
 
         Input input = new Input(9, 22.1, 4.2, 2.1);
@@ -47,18 +47,17 @@ public class DatabaseTest {
     @Sql(value = {"/insert-input-before.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     @Sql(value = {"/insert-input-after.sql"}, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     @Test
-    public void checkDisplayInputInTable() throws Exception{
+    public void checkDisplayInputInTable() throws Exception {
         this.mockMvc.perform(get("/get-inputs"))
                 .andExpect(xpath("(//td[@class='temperature'])[last()]").string("10.2299995"));
     }
 
     @Test
-    public void checkIncorrectSavingInput(){
+    public void checkIncorrectSavingInput() {
         try {
             Input input = new Input(2.1, 4.2, 2.5);
             inputRepository.save(input);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             assertThat(true);
         }
     }
